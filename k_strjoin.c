@@ -2,11 +2,33 @@
 #include <stdlib.h>
 
 char *k_strjoin(const char *s1, const char *s2) {
-  char *ptr = malloc(k_strlen(s1) + k_strlen(s2) + 1);
+  size_t len = 0;
+  size_t i = 0;
+
+  while (s1[i] || s2[i]) {
+    if (s1[i])
+      len++;
+
+    if (s2[i])
+      len++;
+
+    i++;
+  }
+
+  char *ptr = malloc(len + 1);
 
   if (!ptr)
     return NULL;
 
-  k_strcpy(ptr, s1);
-  return k_strcat(ptr, s2);
+  char *start = ptr;
+
+  while (*s1)
+    *ptr++ = *s1++;
+
+  while (*s2)
+    *ptr++ = *s2++;
+
+  *ptr = '\0';
+
+  return start;
 }

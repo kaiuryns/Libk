@@ -6,7 +6,8 @@ char *k_strcat(char *dest, const char *src) {
   while (*dest)
     dest++;
 
-  k_strcpy(dest, src);
+  while ((*dest++ = *src++))
+    ;
 
   return start;
 }

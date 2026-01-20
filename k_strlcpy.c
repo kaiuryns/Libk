@@ -1,7 +1,9 @@
 #include "libk.h"
 
 size_t k_strlcpy(char *dst, const char *src, size_t dstsize) {
-  size_t len = k_strlen(src);
+  size_t len = 0;
+  while (*src++)
+    len++;
 
   if (!dstsize)
     return len;

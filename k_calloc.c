@@ -12,7 +12,10 @@ void *k_calloc(size_t count, size_t size) {
   if (!ptr)
     return NULL;
 
-  k_bzero(ptr, total);
+  unsigned char *pptr = ptr;
+
+  for (size_t i = 0; i < total; i++)
+    pptr[i] = '\0';
 
   return ptr;
 }
