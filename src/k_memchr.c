@@ -1,5 +1,4 @@
 #include "libk.h"
-
 void *k_memchr(const void *s, int c, size_t n) {
   const unsigned char *byte = s;
 

@@ -32,18 +32,17 @@ char **k_split(const char *s, char c) {
           free(ptr[k]);
 
         free(ptr);
+
         return NULL;
       }
 
-      for (size_t l = 0; l < len; l++) {
+      for (size_t l = 0; l < len; l++)
         ptr[word][l] = s[start + l];
-      }
 
       ptr[word][len] = '\0';
       word++;
-    } else {
+    } else
       j++;
-    }
   }
   ptr[word] = NULL;
   return ptr;

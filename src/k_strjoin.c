@@ -5,15 +5,11 @@ char *k_strjoin(const char *s1, const char *s2) {
   size_t len = 0;
   size_t i = 0;
 
-  while (s1[i] || s2[i]) {
-    if (s1[i])
-      len++;
+  while (s1[len])
+    len++;
 
-    if (s2[i])
-      len++;
-
-    i++;
-  }
+  while (s2[i++])
+    len++;
 
   char *ptr = malloc(len + 1);
 

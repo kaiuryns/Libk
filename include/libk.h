@@ -21,6 +21,7 @@ char **k_split(const char *s, char c);
 char *k_substr(const char *s, unsigned int start, size_t len);
 
 void *k_memchr(const void *s, int c, size_t n);
+int k_memcmp(const void *s1, const void *s2, size_t n);
 void *k_memcpy(void *dst, const void *src, size_t n);
 void *k_memmove(void *dst, const void *src, size_t n);
 void *k_memset(void *s, int c, size_t n);
