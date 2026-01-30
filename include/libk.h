@@ -3,8 +3,14 @@
 
 #include <stddef.h>
 
+int k_atoi(const char *nptr);
 void k_bzero(void *s, size_t n);
 void *k_calloc(size_t count, size_t size);
+int k_isalnum(int c);
+int k_isalpha(int c);
+int k_isdigit(int c);
+int k_isspace(int c);
+char *k_itoa(int n);
 int k_strcmp(const char *s1, const char *s2);
 char *k_strcat(char *dest, const char *src);
 char *k_strchr(const char *s, int c);
@@ -28,5 +34,8 @@ void *k_memset(void *s, int c, size_t n);
 
 void k_putchar(char c);
 void k_putstr(const char *s);
+
+int k_tolower(int c);
+int k_toupper(int c);
 
 #endif
